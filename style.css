@@ -1,0 +1,175 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background: #f4f6f8;
+  color: #1a1a1a;
+}
+
+header {
+  background: linear-gradient(135deg, #0068B5, #004A86);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+header img {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35));
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-header:after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 6px;
+  background: rgb(255, 255, 255);
+  margin: 1rem auto 0;
+  border-radius: 3px;
+}
+
+.timeline-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 2rem;
+  max-width: 100%;
+}
+
+.timeline::-webkit-scrollbar {
+  height: 10px;
+}
+
+.timeline::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 5px;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.timeline-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.5rem;
+  width: 220px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+  box-shadow: 0 0 18px rgba(1, 113, 197, 1);
+}
+
+.img-wrapper {
+  background: #0068B5;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(1, 113, 197, 1);
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.card-header {
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.card-header .year {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: #003B73;
+  text-transform: uppercase;
+}
+
+.card-header .chip-name {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: #004A86;
+}
+
+.card-info {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  margin-top: 0.5rem;
+
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.35);
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .95),
+    rgba(1, 113, 197, 1)
+  );
+
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  
+  border-radius: 10px;
+  padding: 0 1rem;
+
+  text-align: center;
+  color: rgba(0, 0, 0, .85);
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.35s ease,
+    padding 0.35s ease;
+}
+
+.timeline-card:hover .card-info {
+  max-height: 300px;
+  opacity: 1;
+  padding: 1rem;
+}
+
+.timeline-card:active .card-info {
+  max-height: 300px;
+  opacity: 1;
+  padding: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0 2rem;
+  font-size: 0.85rem;
+  color: #555;
+}
